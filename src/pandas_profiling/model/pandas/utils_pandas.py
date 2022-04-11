@@ -7,6 +7,7 @@ def weighted_median(data: np.ndarray, weights: np.ndarray) -> int:
       data (list or numpy.array): data
       weights (list or numpy.array): weights
     """
+    weights = np.array(weights)
     s_data, s_weights = map(np.array, zip(*sorted(zip(data, weights))))
     midpoint = 0.5 * sum(s_weights)
     if any(weights > midpoint):
